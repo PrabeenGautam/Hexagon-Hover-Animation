@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  margin: -10px -50px;
+  position: relative;
+  z-index: 2;
+}
+
+.row {
+  display: flex;
+  /* 1 / 4 of total height of hexagon */
+  margin-top: -27.5px;
+}
+
+.row:nth-child(even) {
+  /* half of width  + 1px (extra space) */
+  margin-left: 51px;
+}
+
+.hexagon {
+  margin: 1px;
+  flex-shrink: 0;
+  width: 100px;
+  height: 110px;
+  background-color: #222;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: relative;
+  animation: animate 2s linear infinite;
+}
+
+.row:nth-child(even) .hexagon {
+  background-color: #333;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

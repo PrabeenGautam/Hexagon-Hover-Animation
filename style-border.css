@@ -1,0 +1,26 @@
+.hexagon {
+  transition: background 2s;
+}
+
+.hexagon:hover,
+.row:nth-child(even) .hexagon:hover {
+  transition: background 0s;
+  background-color: #00ff00;
+}
+
+.hexagon::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+
+  background-color: #222;
+
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.row:nth-child(even) .hexagon::after {
+  background-color: #333;
+}

@@ -1,0 +1,23 @@
+.cursor {
+  width: 500px;
+  height: 500px;
+  background-color: #0f0;
+
+  position: absolute;
+  top: 0;
+
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: cursor 4s linear infinite;
+}
+
+@keyframes cursor {
+  0% {
+    filter: hue-rotate(0deg) blur(50px);
+  }
+
+  100% {
+    filter: hue-rotate(360deg) blur(50px);
+  }
+}

@@ -1,0 +1,9 @@
+.hexagon {
+  transition: background 2s;
+}
+
+.hexagon:hover,
+.row:nth-child(even) .hexagon:hover {
+  transition: background 0s;
+  background-color: #00ff00;
+}
